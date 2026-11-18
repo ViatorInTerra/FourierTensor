@@ -1,0 +1,391 @@
+{
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target_lean_mathlib": "4.29.1",
+  "native_checked": false,
+  "mathlib_imports": [
+    "Mathlib.Tactic",
+    "Mathlib.RingTheory.RootsOfUnity.Complex",
+    "Mathlib.LinearAlgebra.Matrix.NonsingularInverse",
+    "Mathlib.LinearAlgebra.Matrix.Determinant.Misc",
+    "Mathlib.Data.Matrix.Block",
+    "Mathlib.LinearAlgebra.Matrix.Block",
+    "Mathlib.Analysis.SpecialFunctions.Log.Base",
+    "Mathlib.Analysis.SpecialFunctions.Log.RpowTendsto",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+    "Mathlib.Analysis.Asymptotics.SpecificAsymptotics",
+    "Mathlib.Data.Nat.Choose.Factorization",
+    "Mathlib.NumberTheory.PrimeCounting",
+    "Mathlib.Data.Nat.Log",
+    "Mathlib.Data.Nat.ChineseRemainder",
+    "Mathlib.Data.Nat.Digits.Lemmas",
+    "Mathlib.Data.ZMod.Coprime",
+    "Mathlib.Data.Fintype.Pi",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Data.Fin.Tuple.Basic",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Data.Finset.Powerset",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Algebra.Order.Floor.Semifield"
+  ],
+  "edits": [
+    {
+      "prelude": "formalization\\vendor\\PrimeCountingCompatibility.lean",
+      "sha256": "cfc62a559e4a8d6ed117014b2db44b15dacb26e93bfd3d37c41c3740026c3fc2"
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.Cost",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.WorkBounds",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.FourierIdentities",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.FourierIdentities",
+      "old": "convert! Complex.exp_pi_div_two_mul_I using 2",
+      "new": "convert Complex.exp_pi_div_two_mul_I using 2",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ChirpConvolution",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 4
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ChirpConvolution",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 3
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.PowerTables",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.PowerTables",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LocalPreparation",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LocalPreparation",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ProductMatrix",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 4
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LayerWords",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 5
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LayerWords",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 3
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.DisjointIntervals",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.DisjointIntervals",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 6
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.BinaryFFT",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.NewtonFactorization",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.NewtonFactorization",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.NewtonFactorization",
+      "old": "Matrix.det_of_isUpperTriangular",
+      "new": "Matrix.det_of_upperTriangular",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ToeplitzIdentities",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ToeplitzIdentities",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ToeplitzUpdates",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 7
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ToeplitzUpdates",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 3
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ChunkCompiler",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ChunkCompiler",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.MeasuredFit",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.MeasuredFit",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.SectorPacking",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.SectorPacking",
+      "old": "dite_eq_left",
+      "new": "dif_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.SectorPacking",
+      "old": "    rw [chops _ _ _ (diy a),hg.2.1,chops _ _ _ (diy b)] at hD",
+      "new": "    dsimp only at hD hM\n    rw [chops _ _ _ (diy a),hg.2.1,chops _ _ _ (diy b)] at hD",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LengthSelection",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LengthSelection",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.DirectionalWords",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.DirectionalWords",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.TensorFibers",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.TensorAlgorithm",
+      "old": "(by intro i; unfold P; split <;> simp_all)",
+      "new": "(by intro i; unfold P; dsimp only; split <;> simp_all)",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.RecursionBounds",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.RecursionBounds",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.RecursionBounds",
+      "old": "dite_eq_left",
+      "new": "dif_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.RecursionBounds",
+      "old": "dite_eq_right",
+      "new": "dif_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.NetworkRoles",
+      "old": "dite_eq_left",
+      "new": "dif_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ScalarNetwork",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.NetworkLabels",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 5
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.NetworkLabels",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LayerCompilation",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.LayerCompilation",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.FourierCompilation",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.WordCompilation",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.WordCompilation",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.PrefixTraversal",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.PrefixTraversal",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.SectorIdentities",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 3
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.SectorIdentities",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.SectorAlgorithm",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ScalarPreparation",
+      "old": "intro i j hj; unfold deal; split <;> omega",
+      "new": "intro i j hj; unfold deal; dsimp only; split <;> omega",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.WorkingPreparation",
+      "old": "(HD.congr fun i => by rw [spray,show extent",
+      "new": "(HD.congr fun i => by dsimp only [spray]; rw [show extent",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.ArbitraryLength",
+      "old": "have hh := h.volume_ge i.i; have hk := i.hj; omega)",
+      "new": "change i.j < N i.i\n      have hh := h.volume_ge i.i; have hk := i.hj; omega)",
+      "count": 1
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.TransformProgram",
+      "old": "ite_eq_right",
+      "new": "if_neg",
+      "count": 2
+    },
+    {
+      "module": "OAI.Computability.FourierTransform.Asymptotics",
+      "old": "ite_eq_left",
+      "new": "if_pos",
+      "count": 1
+    }
+  ],
+  "bundle_sha256": "0bbcb515f602564ba23d919400ce0103edee76fe453ed4a5346547629f73f18a"
+}

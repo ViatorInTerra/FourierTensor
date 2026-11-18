@@ -1,0 +1,9 @@
+.lake/
+.validation/
+.package-overrides.json
+*.olean
+*.ilean
+*.olean.server
+*.c
+*.o
+__pycache__/

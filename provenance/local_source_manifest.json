@@ -1,0 +1,1365 @@
+{
+  "root_module": "FourierTensor.AllLengthDFT",
+  "lean_toolchain": "leanprover/lean4:v4.29.1",
+  "mathlib_revision": "5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+  "upstream_repository": "https://github.com/openai/math",
+  "upstream_revision": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "executor_closure_count": 115,
+  "additional_audit_module": "work_in_progress.BoundedKernelAxiomAudit",
+  "copied_modules": [
+    {
+      "module": "FourierSchur.Executor",
+      "path": "support/FourierSchur/Executor.lean",
+      "source_path": "formalization/FourierSchur/Executor.lean",
+      "sha256": "b9b3dd7c20765fa784ba310a11239bee087fe30148973c697b60edd71c1fe5e7",
+      "local_imports": [
+        "work_in_progress.OriginalCertifiedTensorBackend",
+        "work_in_progress.OriginalGroupedCensusExecutor"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "MyProject.ConstantPreparation",
+      "path": "support/MyProject/ConstantPreparation.lean",
+      "source_path": "formalization/MyProject/ConstantPreparation.lean",
+      "sha256": "3d52f9783a66dded194039d1b54ee146d023d09272bbc76065a7dcc38a477939",
+      "local_imports": [],
+      "external_imports": [
+        "Mathlib.Algebra.Order.GroupWithZero.Unbundled.Basic",
+        "Mathlib.Algebra.Star.Rat",
+        "Mathlib.Data.Complex.Basic"
+      ]
+    },
+    {
+      "module": "MyProject.ConstantPreparationCombinators",
+      "path": "support/MyProject/ConstantPreparationCombinators.lean",
+      "source_path": "formalization/MyProject/ConstantPreparationCombinators.lean",
+      "sha256": "adc77710ca1d6b61124fd4aadc616bdb0e3f44c45cc988f49d447ec6b2f1f744",
+      "local_imports": [
+        "MyProject.ConstantPreparation"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "MyProject.DFTSpecification",
+      "path": "support/MyProject/DFTSpecification.lean",
+      "source_path": "formalization/MyProject/DFTSpecification.lean",
+      "sha256": "956905811e5c00b8c6d444a1f925e585c3d4b3512869cf2e2ff6a256c69e41ff",
+      "local_imports": [
+        "MyProject.LinearCircuit"
+      ],
+      "external_imports": [
+        "Mathlib.Analysis.Asymptotics.Defs",
+        "Mathlib.Analysis.Complex.Basic",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+        "Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots"
+      ]
+    },
+    {
+      "module": "MyProject.LinearCircuit",
+      "path": "support/MyProject/LinearCircuit.lean",
+      "source_path": "formalization/MyProject/LinearCircuit.lean",
+      "sha256": "168c0797ea1940529d5d8af08c264d4387c6fc98a9d11c65e4ffde3cf967349d",
+      "local_imports": [],
+      "external_imports": [
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    {
+      "module": "MyProject.SchurAssembly",
+      "path": "support/MyProject/SchurAssembly.lean",
+      "source_path": "formalization/MyProject/SchurAssembly.lean",
+      "sha256": "c1f5ed8b1a4b96b0362ba22bea17d68baa0aae6f397f2dfc93e272e78f3520d9",
+      "local_imports": [
+        "MyProject.DFTSpecification"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "MyProject.ToeplitzChunkSize",
+      "path": "support/MyProject/ToeplitzChunkSize.lean",
+      "source_path": "formalization/MyProject/ToeplitzChunkSize.lean",
+      "sha256": "d56ac39f1d51a61fcf96cf2a8ac9383bf8448a0e2ffa1e824b2529af166f03f3",
+      "local_imports": [],
+      "external_imports": [
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Nat.Log",
+        "Mathlib.Tactic"
+      ]
+    },
+    {
+      "module": "MyProject.ToeplitzSuppliedRoots",
+      "path": "support/MyProject/ToeplitzSuppliedRoots.lean",
+      "source_path": "formalization/MyProject/ToeplitzSuppliedRoots.lean",
+      "sha256": "ca32892233cd7951fc082ef4b7f188768e19119ff6eceb8ebfbe3863667c5c5d",
+      "local_imports": [
+        "MyProject.ConstantPreparationCombinators",
+        "MyProject.ToeplitzChunkSize"
+      ],
+      "external_imports": [
+        "Mathlib.Data.List.OfFn",
+        "Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots"
+      ]
+    },
+    {
+      "module": "vendor.OpenAIUniformFourierBundle",
+      "path": "support/vendor/OpenAIUniformFourierBundle.lean",
+      "source_path": "formalization/vendor/OpenAIUniformFourierBundle.lean",
+      "sha256": "0bbcb515f602564ba23d919400ce0103edee76fe453ed4a5346547629f73f18a",
+      "local_imports": [],
+      "external_imports": [
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Algebra.Order.Floor.Semifield",
+        "Mathlib.Analysis.Asymptotics.SpecificAsymptotics",
+        "Mathlib.Analysis.SpecialFunctions.Log.Base",
+        "Mathlib.Analysis.SpecialFunctions.Log.RpowTendsto",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Data.Finset.Powerset",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Matrix.Block",
+        "Mathlib.Data.Nat.ChineseRemainder",
+        "Mathlib.Data.Nat.Choose.Factorization",
+        "Mathlib.Data.Nat.Digits.Lemmas",
+        "Mathlib.Data.Nat.Log",
+        "Mathlib.Data.ZMod.Coprime",
+        "Mathlib.LinearAlgebra.Matrix.Block",
+        "Mathlib.LinearAlgebra.Matrix.Determinant.Misc",
+        "Mathlib.LinearAlgebra.Matrix.NonsingularInverse",
+        "Mathlib.NumberTheory.PrimeCounting",
+        "Mathlib.RingTheory.RootsOfUnity.Complex",
+        "Mathlib.Tactic"
+      ]
+    },
+    {
+      "module": "work_in_progress.BoundedKernelAxiomAudit",
+      "path": "support/work_in_progress/BoundedKernelAxiomAudit.lean",
+      "source_path": "formalization/work_in_progress/BoundedKernelAxiomAudit.lean",
+      "sha256": "2d05678c41d41bda6c12bf4c02570c265441900ddc827bf2d45e3b6ba32044fe",
+      "local_imports": [],
+      "external_imports": [
+        "Lean"
+      ]
+    },
+    {
+      "module": "work_in_progress.GroupedResidualRecurrence",
+      "path": "support/work_in_progress/GroupedResidualRecurrence.lean",
+      "source_path": "formalization/work_in_progress/GroupedResidualRecurrence.lean",
+      "sha256": "048c54d92ad4504a4f816b21667de17bb515b01f1a9a5510d03efcf112d30a1f",
+      "local_imports": [],
+      "external_imports": [
+        "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+        "Mathlib.Tactic"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalAffineFourierConjugacy",
+      "path": "support/work_in_progress/OriginalAffineFourierConjugacy.lean",
+      "source_path": "formalization/work_in_progress/OriginalAffineFourierConjugacy.lean",
+      "sha256": "896469271edf9b0aedd733d3319708f87e2bc14709eff8cd8de185fd814fc8e8",
+      "local_imports": [
+        "work_in_progress.OriginalQuadraticAdapterWords"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalAllLengthSubstitution",
+      "path": "support/work_in_progress/OriginalAllLengthSubstitution.lean",
+      "source_path": "formalization/work_in_progress/OriginalAllLengthSubstitution.lean",
+      "sha256": "69ddb7727318c1ae22629b4ab5572431748b146e157e70f042f3fc3a00ed4f02",
+      "local_imports": [
+        "work_in_progress.OriginalArbitraryLengthSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalArbitraryLengthSubstitution",
+      "path": "support/work_in_progress/OriginalArbitraryLengthSubstitution.lean",
+      "source_path": "formalization/work_in_progress/OriginalArbitraryLengthSubstitution.lean",
+      "sha256": "47c52ce45b64c06fc36325dc9033691666cc9a326adb4c4b8955ae0b31ff3e86",
+      "local_imports": [
+        "work_in_progress.OriginalWorkingSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalBinaryMatrixCertificates",
+      "path": "support/work_in_progress/OriginalBinaryMatrixCertificates.lean",
+      "source_path": "formalization/work_in_progress/OriginalBinaryMatrixCertificates.lean",
+      "sha256": "f9db1e989e0867ae2df63989b8f990f03c492e7bb80497aa10b8c4caed2dd454",
+      "local_imports": [
+        "work_in_progress.OriginalPhysicalChirpRAM",
+        "work_in_progress.OriginalQuadraticCharacterCertificates"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalCallbackGreenPotential",
+      "path": "support/work_in_progress/OriginalCallbackGreenPotential.lean",
+      "source_path": "formalization/work_in_progress/OriginalCallbackGreenPotential.lean",
+      "sha256": "75ba25c773d947c8eca9532aaea3a937c4881e17c4b1fed7494f15cde10c5c2b",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeTapeCensus"
+      ],
+      "external_imports": [
+        "Mathlib.Algebra.Order.Archimedean.Basic"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalCertifiedTensorBackend",
+      "path": "support/work_in_progress/OriginalCertifiedTensorBackend.lean",
+      "source_path": "formalization/work_in_progress/OriginalCertifiedTensorBackend.lean",
+      "sha256": "a39a0784e7971bf792eaeefe9b50a8ce81a89d8c683238a75abeb9b3e52b2c5c",
+      "local_imports": [
+        "MyProject.SchurAssembly",
+        "work_in_progress.OriginalStandardTensorExecutor"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalCheckedNativeDirection",
+      "path": "support/work_in_progress/OriginalCheckedNativeDirection.lean",
+      "source_path": "formalization/work_in_progress/OriginalCheckedNativeDirection.lean",
+      "sha256": "eaebbd9347e9b76a29764f320379d666bfaae768667a9764c4009b15cb11ee45",
+      "local_imports": [
+        "work_in_progress.OriginalBinaryMatrixCertificates"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalCompilerRootBridge",
+      "path": "support/work_in_progress/OriginalCompilerRootBridge.lean",
+      "source_path": "formalization/work_in_progress/OriginalCompilerRootBridge.lean",
+      "sha256": "455ef0982e2acc4d179f9bc54329bc531d784a5b72255b2eab9fbccd0652c8fd",
+      "local_imports": [
+        "MyProject.ToeplitzSuppliedRoots",
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalCompilerRootPreparation",
+      "path": "support/work_in_progress/OriginalCompilerRootPreparation.lean",
+      "source_path": "formalization/work_in_progress/OriginalCompilerRootPreparation.lean",
+      "sha256": "7c3bf88afe341c14d3a67a36240662b47f5be076ed3f8fe793de730c83a8dc5f",
+      "local_imports": [
+        "work_in_progress.OriginalCompilerRootBridge"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalCompilerRootReader",
+      "path": "support/work_in_progress/OriginalCompilerRootReader.lean",
+      "source_path": "formalization/work_in_progress/OriginalCompilerRootReader.lean",
+      "sha256": "3731cd165987107cf42075195103861e83a9210e527aa3f2d70a301e73e0ba9a",
+      "local_imports": [
+        "work_in_progress.OriginalCompilerRootPreparation",
+        "work_in_progress.OriginalSectorSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualBankElimination",
+      "path": "support/work_in_progress/OriginalContextualBankElimination.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualBankElimination.lean",
+      "sha256": "d1c26c3f0cfe08bd64e4e21beda38b5b31a4f534c03df3354bcf2f30a1f1da43",
+      "local_imports": [
+        "work_in_progress.OriginalLocalizedBankWorkspaceRAM"
+      ],
+      "external_imports": [
+        "Mathlib.LinearAlgebra.Matrix.Kronecker"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalContextualChirpWords",
+      "path": "support/work_in_progress/OriginalContextualChirpWords.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualChirpWords.lean",
+      "sha256": "1b1a106b870c0069e162d82cd88d312426c5372736a028180671209df60b9e12",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameCompilerRAM",
+        "work_in_progress.OriginalPhysicalAffineRAM",
+        "work_in_progress.OriginalPhysicalChirpRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeOutputIdentity",
+      "path": "support/work_in_progress/OriginalContextualNativeOutputIdentity.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeOutputIdentity.lean",
+      "sha256": "f59d20bd28020821c49037fe254a328ede13d67ce3453f121e86b2e405df1c5d",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeRowChecks",
+        "work_in_progress.OriginalJointNativeGenerators",
+        "work_in_progress.OriginalSparseNativeProgram"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeRowCertificate",
+      "path": "support/work_in_progress/OriginalContextualNativeRowCertificate.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeRowCertificate.lean",
+      "sha256": "952bdf9f31b2c7fb38158a91ee4554c1db8d9d20dae5ee55d100ca2d7c2f0adf",
+      "local_imports": [
+        "work_in_progress.OriginalSparseNativeRows"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeRowChecks",
+      "path": "support/work_in_progress/OriginalContextualNativeRowChecks.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeRowChecks.lean",
+      "sha256": "52c2ad70793309dd3f9c2b9d9e0fa2b20480a35fc4c44f8d5b43213da01b9d01",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeRowCertificate"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeTapeAllNodes",
+      "path": "support/work_in_progress/OriginalContextualNativeTapeAllNodes.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeTapeAllNodes.lean",
+      "sha256": "abda04500ca13c0936b083abcb88a4efa14248cfff6552e30fa6402f70aea92c",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeTapeMetadata"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeTapeCensus",
+      "path": "support/work_in_progress/OriginalContextualNativeTapeCensus.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeTapeCensus.lean",
+      "sha256": "e800384ef49a089e24baa81aa60567ca72b457dd5dbd026865d98ebf45481f30",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeTapeCorrectness",
+        "work_in_progress.OriginalHellingerCallbackMoment"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeTapeCorrectness",
+      "path": "support/work_in_progress/OriginalContextualNativeTapeCorrectness.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeTapeCorrectness.lean",
+      "sha256": "89bceb4441d6c6d215a206144ac93de423f77f3e20efb5a52c56eb31759420ba",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeOutputIdentity",
+        "work_in_progress.OriginalContextualNativeTapeAllNodes",
+        "work_in_progress.OriginalContextualNativeTapeImplementation",
+        "work_in_progress.OriginalNativeSparseExecutionBridge"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeTapeImplementation",
+      "path": "support/work_in_progress/OriginalContextualNativeTapeImplementation.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeTapeImplementation.lean",
+      "sha256": "585502ab341a5671701c3b202601aadb923774efc2a01758b6fb0d6ebd41e798",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeTapeMetadata"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalContextualNativeTapeMetadata",
+      "path": "support/work_in_progress/OriginalContextualNativeTapeMetadata.lean",
+      "source_path": "formalization/work_in_progress/OriginalContextualNativeTapeMetadata.lean",
+      "sha256": "a9b401ab4ec18e4707a3792b9ecef861232e4e815c3fd55bcfd51730d422dab1",
+      "local_imports": [
+        "work_in_progress.OriginalContextualNativeRowCertificate",
+        "work_in_progress.OriginalJointNativeDAG",
+        "work_in_progress.OriginalNativeFrameAlphabet",
+        "work_in_progress.OriginalSparsePointGather"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedAllowanceBound",
+      "path": "support/work_in_progress/OriginalGroupedAllowanceBound.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedAllowanceBound.lean",
+      "sha256": "9e703837c3bafbf3ba4260d99889e306e5271650825a0c6a066a0347b67ae24b",
+      "local_imports": [
+        "work_in_progress.GroupedResidualRecurrence",
+        "work_in_progress.OriginalGroupedRecursionRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedBodyInstantiationRAM",
+      "path": "support/work_in_progress/OriginalGroupedBodyInstantiationRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedBodyInstantiationRAM.lean",
+      "sha256": "00556a5a0fa8e4d9ef02b41d71de51f90fbec74830c653f02d143f3fd86bba13",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameCompilerRAM",
+        "work_in_progress.OriginalGroupedPhysicalBodyRAM",
+        "work_in_progress.OriginalGroupedWordProfile"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedCensusBridge",
+      "path": "support/work_in_progress/OriginalGroupedCensusBridge.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedCensusBridge.lean",
+      "sha256": "923aab493c389e357572007a14b3f2fa12280d293d859306730b2872b07f3789",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedNativeInventory",
+        "work_in_progress.OriginalGroupedWordProfile"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedCensusExecutor",
+      "path": "support/work_in_progress/OriginalGroupedCensusExecutor.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedCensusExecutor.lean",
+      "sha256": "8aa95bbc4bcd645beef65a430edd8951024aaa66260212c478577b7e59ea6363",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedBodyInstantiationRAM",
+        "work_in_progress.OriginalGroupedCensusBridge",
+        "work_in_progress.OriginalGroupedNativeProfile",
+        "work_in_progress.OriginalSharedBlockCompletion"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedFrameBudget",
+      "path": "support/work_in_progress/OriginalGroupedFrameBudget.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedFrameBudget.lean",
+      "sha256": "bc725d4f8de354d408dc82e397e4c2976815c4afeec84ed1a814486fe5aa90c6",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameWords"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedFrameCompilerRAM",
+      "path": "support/work_in_progress/OriginalGroupedFrameCompilerRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedFrameCompilerRAM.lean",
+      "sha256": "c9dc03d05aeab2bbff0d6c7688b8a98a2a6989ff854a6b74ec4214147722b080",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameServiceRAM",
+        "work_in_progress.OriginalGroupedResidualSemantics"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedFrameFactorization",
+      "path": "support/work_in_progress/OriginalGroupedFrameFactorization.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedFrameFactorization.lean",
+      "sha256": "28f874e1fb5d85737e258cd2bf6f05043ea850cdfe644a8db3d2516d761835c7",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": [
+        "Mathlib.Data.Finset.SymmDiff"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedFrameServiceRAM",
+      "path": "support/work_in_progress/OriginalGroupedFrameServiceRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedFrameServiceRAM.lean",
+      "sha256": "1184b36d30c83becaccedd5c05cf8f8d7e3b88800bb2d994c94f237e9bffbb69",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameFactorization",
+        "work_in_progress.OriginalGroupedRoleResidualRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedFrameWords",
+      "path": "support/work_in_progress/OriginalGroupedFrameWords.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedFrameWords.lean",
+      "sha256": "cb08711069b40a58320596644fd682bdc7834ffbd3f3c15746b2e01db17b27af",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedMaskCards",
+      "path": "support/work_in_progress/OriginalGroupedMaskCards.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedMaskCards.lean",
+      "sha256": "935cf65f63e9f430b2cae7d7c76e98539b375e56287fa43d223c3babf2cdf604",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle",
+        "work_in_progress.OriginalGroupedResidualCertificate"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedNativeInventory",
+      "path": "support/work_in_progress/OriginalGroupedNativeInventory.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedNativeInventory.lean",
+      "sha256": "aed494989baaad64f8cb2be5e291e7c5ce7052ef17dfed72b5396276382c4cf2",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedMaskCards",
+        "work_in_progress.OriginalGroupedNeighborCount"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedNativeProfile",
+      "path": "support/work_in_progress/OriginalGroupedNativeProfile.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedNativeProfile.lean",
+      "sha256": "41a310ea88a841c5064d0a8c53bed49a9c1219c0e74ddd452de64e641da13b33",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedAllowanceBound",
+        "work_in_progress.OriginalGroupedWordProfile"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedNeighborCount",
+      "path": "support/work_in_progress/OriginalGroupedNeighborCount.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedNeighborCount.lean",
+      "sha256": "efe697319db623e820cdf47371ac2c4c42b01033426d6beb6c3158f38dbb1607",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedPhysicalBits",
+      "path": "support/work_in_progress/OriginalGroupedPhysicalBits.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedPhysicalBits.lean",
+      "sha256": "eaf0a3e8bbf3bf85f91490346f1da2ffb712af05d5a3ec308ab7076bda9f2382",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedRoleBitsRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedPhysicalBodyRAM",
+      "path": "support/work_in_progress/OriginalGroupedPhysicalBodyRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedPhysicalBodyRAM.lean",
+      "sha256": "11280bd4488c57cc71f3e14a37f4353e3ae16eb4e11d6b261260be80bb7d3313",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedPhysicalBits"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedPricedSharedNetwork",
+      "path": "support/work_in_progress/OriginalGroupedPricedSharedNetwork.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedPricedSharedNetwork.lean",
+      "sha256": "df0e7e1df8cdfa3e8cee815173e38cc805a75c95b6e0ba1bc435ac5463fc10ea",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameBudget"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedRecursionRAM",
+      "path": "support/work_in_progress/OriginalGroupedRecursionRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedRecursionRAM.lean",
+      "sha256": "c5a3bed582d0b8d683b9df61944fca3198c53a07a912c3eb384c798915e911bb",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedResidualCertificate",
+      "path": "support/work_in_progress/OriginalGroupedResidualCertificate.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedResidualCertificate.lean",
+      "sha256": "eba4f1e5ad9ba79c623311caf717f1101539916bdaa4d022618536cc44b7994a",
+      "local_imports": [
+        "work_in_progress.GroupedResidualRecurrence"
+      ],
+      "external_imports": [
+        "Mathlib.Analysis.Complex.ExponentialBounds"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedResidualRAM",
+      "path": "support/work_in_progress/OriginalGroupedResidualRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedResidualRAM.lean",
+      "sha256": "61f0c80d71fd2b88be00a2cdd841627d4941e5c92384f6c186984108c827a242",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedResidualSemantics",
+      "path": "support/work_in_progress/OriginalGroupedResidualSemantics.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedResidualSemantics.lean",
+      "sha256": "45711370e872649bb472498744272e33f2e4d2d2646f92c579b9c9e7a80eaa69",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameFactorization",
+        "work_in_progress.OriginalGroupedResidualRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedRoleBitsRAM",
+      "path": "support/work_in_progress/OriginalGroupedRoleBitsRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedRoleBitsRAM.lean",
+      "sha256": "08e89142699cc80a48d466117c3de523d65f8e65d87f9b78b207f80f502f4ecb",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedRoleResidualRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedRoleResidualRAM",
+      "path": "support/work_in_progress/OriginalGroupedRoleResidualRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedRoleResidualRAM.lean",
+      "sha256": "ae1dfae0eed97ac4e901471d723c474ee2a0801c2630fd504e2070dffec30710",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedResidualRAM",
+        "work_in_progress.OriginalGroupedWordRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedWordProfile",
+      "path": "support/work_in_progress/OriginalGroupedWordProfile.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedWordProfile.lean",
+      "sha256": "8b5b09ee98bba0161479fa40ba9ee8bc87ee7c02b1547bac1cc5fd3bbe4beae4",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameBudget",
+        "work_in_progress.OriginalGroupedPricedSharedNetwork",
+        "work_in_progress.OriginalGroupedWordRAM"
+      ],
+      "external_imports": [
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Data.List.OfFn"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalGroupedWordRAM",
+      "path": "support/work_in_progress/OriginalGroupedWordRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalGroupedWordRAM.lean",
+      "sha256": "178f36db7cebe6fab02ae07c33f9738c917c82df3d5ca8feed66efb5c03e1022",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameWords",
+        "work_in_progress.OriginalGroupedRecursionRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalHellingerCallbackMoment",
+      "path": "support/work_in_progress/OriginalHellingerCallbackMoment.lean",
+      "source_path": "formalization/work_in_progress/OriginalHellingerCallbackMoment.lean",
+      "sha256": "b9a90223fd4436d28f40a4f8e4c9476461e77bad5ba1caff8619c205b86756af",
+      "local_imports": [],
+      "external_imports": [
+        "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+        "Mathlib.Data.Real.Sqrt",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalJointNativeDAG",
+      "path": "support/work_in_progress/OriginalJointNativeDAG.lean",
+      "source_path": "formalization/work_in_progress/OriginalJointNativeDAG.lean",
+      "sha256": "ec3d2f0767174f967139ac09db8d3f659ed4e19e220960032e77e5a50482ebfc",
+      "local_imports": [
+        "work_in_progress.OriginalJointNativeDirections",
+        "work_in_progress.OriginalNativeBankDAG"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalJointNativeDirections",
+      "path": "support/work_in_progress/OriginalJointNativeDirections.lean",
+      "source_path": "formalization/work_in_progress/OriginalJointNativeDirections.lean",
+      "sha256": "04049a53e1fc6a36d0c029ac6d60e77c44c2a9e28e61648eee89817ef180848a",
+      "local_imports": [
+        "work_in_progress.OriginalCheckedNativeDirection"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalJointNativeFrameDictionary",
+      "path": "support/work_in_progress/OriginalJointNativeFrameDictionary.lean",
+      "source_path": "formalization/work_in_progress/OriginalJointNativeFrameDictionary.lean",
+      "sha256": "a606374e575e7352c148e8d292af0fda7737f0d25b213024e3d29ceceb1414f9",
+      "local_imports": [
+        "work_in_progress.OriginalJointNativeDirections",
+        "work_in_progress.OriginalJointNativeGenerators"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalJointNativeGenerators",
+      "path": "support/work_in_progress/OriginalJointNativeGenerators.lean",
+      "source_path": "formalization/work_in_progress/OriginalJointNativeGenerators.lean",
+      "sha256": "c7b9c724d40851673add87e9aeff3b0a7ae2a2836c4c5fef7fa93f497e90cead",
+      "local_imports": [
+        "work_in_progress.OriginalJointNativeRowCertificate",
+        "work_in_progress.OriginalNativeGeneratorRealization"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalJointNativeRowCertificate",
+      "path": "support/work_in_progress/OriginalJointNativeRowCertificate.lean",
+      "source_path": "formalization/work_in_progress/OriginalJointNativeRowCertificate.lean",
+      "sha256": "88c4faffc1b78ed8865dcc0201130e71af4118d4c78385ce3ec86427a278c363",
+      "local_imports": [
+        "work_in_progress.OriginalSparseNativeRows"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalLocalizedBankSharing",
+      "path": "support/work_in_progress/OriginalLocalizedBankSharing.lean",
+      "source_path": "formalization/work_in_progress/OriginalLocalizedBankSharing.lean",
+      "sha256": "1e01353ca61adabd6ce74e14ea7b4142b1d4f74c94a2bd3c6daf177dd3b2f32d",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameCompilerRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalLocalizedBankWorkspaceRAM",
+      "path": "support/work_in_progress/OriginalLocalizedBankWorkspaceRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalLocalizedBankWorkspaceRAM.lean",
+      "sha256": "5a20a99c4cf031ba875d86811ae73ac26ada96f00a3c30b8e09ca427efc8a4e2",
+      "local_imports": [
+        "work_in_progress.OriginalNativeCenterSharing"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalMonotoneDensity",
+      "path": "support/work_in_progress/OriginalMonotoneDensity.lean",
+      "source_path": "formalization/work_in_progress/OriginalMonotoneDensity.lean",
+      "sha256": "eeb33238bad37d5d13f5828c4dace13e07c4f4db4995dd70b2468fc27ce18f84",
+      "local_imports": [
+        "work_in_progress.OriginalSectorSubstitution"
+      ],
+      "external_imports": [
+        "Mathlib.Analysis.Asymptotics.Lemmas",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Data.Finset.Lattice.Fold",
+        "Mathlib.Tactic"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalNativeBankDAG",
+      "path": "support/work_in_progress/OriginalNativeBankDAG.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeBankDAG.lean",
+      "sha256": "12192da602be47e3d21928d78711c80906c586782c84b464f721f6c181dbabaf",
+      "local_imports": [
+        "work_in_progress.OriginalTranslatedBankPolynomialRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalNativeCenterSharing",
+      "path": "support/work_in_progress/OriginalNativeCenterSharing.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeCenterSharing.lean",
+      "sha256": "8a9ff77157af7baacd3f0c7d7872bd16fc4edf3e72da885cae3cef108a3fddf2",
+      "local_imports": [
+        "work_in_progress.OriginalLocalizedBankSharing"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalNativeComplementClosure",
+      "path": "support/work_in_progress/OriginalNativeComplementClosure.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeComplementClosure.lean",
+      "sha256": "b9ad4075d2ad29e870b3a29b918fd0a9f2f59eb266ba086943099cb56e18f00d",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedFrameFactorization"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalNativeFrameAlphabet",
+      "path": "support/work_in_progress/OriginalNativeFrameAlphabet.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeFrameAlphabet.lean",
+      "sha256": "cf60f0b7e471f5d981e02bb023aeb10366a64a5c2dc6a38b7802fd8718176315",
+      "local_imports": [
+        "work_in_progress.OriginalJointNativeFrameDictionary"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalNativeGeneratorRealization",
+      "path": "support/work_in_progress/OriginalNativeGeneratorRealization.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeGeneratorRealization.lean",
+      "sha256": "57dddb892b57db4260761c922a8d1fb048179b03e23811588771bf44bed4a972",
+      "local_imports": [
+        "work_in_progress.OriginalNativeGeneratorSymbols"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalNativeGeneratorSymbols",
+      "path": "support/work_in_progress/OriginalNativeGeneratorSymbols.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeGeneratorSymbols.lean",
+      "sha256": "90b5e5d48a97826c66e93caccc999f93f9bbfcd53299bf5cc65f0295963002b7",
+      "local_imports": [
+        "work_in_progress.OriginalCheckedNativeDirection",
+        "work_in_progress.OriginalNativeComplementClosure"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalNativeSparseExecutionBridge",
+      "path": "support/work_in_progress/OriginalNativeSparseExecutionBridge.lean",
+      "source_path": "formalization/work_in_progress/OriginalNativeSparseExecutionBridge.lean",
+      "sha256": "a1c836d75cd1e11bac8f6239484644c0b53185b662e1aba6f23a3b6ad418fe3a",
+      "local_imports": [
+        "work_in_progress.OriginalSparseNativeProgram",
+        "work_in_progress.OriginalSparsePointGather"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalPhysicalAffineRAM",
+      "path": "support/work_in_progress/OriginalPhysicalAffineRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalPhysicalAffineRAM.lean",
+      "sha256": "92825152f4efb0d41f14ed15fd1e02fcdc679a8da1061a6d328abb3e91a909f5",
+      "local_imports": [
+        "work_in_progress.OriginalPhysicalChirpRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalPhysicalChirpRAM",
+      "path": "support/work_in_progress/OriginalPhysicalChirpRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalPhysicalChirpRAM.lean",
+      "sha256": "4f4506bd05c95112b2d7fdf0ee666622eadbb2d4d559b1170f5e27f98fe5e7bd",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedWordRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalPhysicalQuarterPhaseRAM",
+      "path": "support/work_in_progress/OriginalPhysicalQuarterPhaseRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalPhysicalQuarterPhaseRAM.lean",
+      "sha256": "9e711900ba89c8ee2b7c77ac9ba6d3325ac399ed6f07d3fea40ef773a3b3f460",
+      "local_imports": [
+        "work_in_progress.OriginalPhysicalChirpRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalPolylogDensity",
+      "path": "support/work_in_progress/OriginalPolylogDensity.lean",
+      "source_path": "formalization/work_in_progress/OriginalPolylogDensity.lean",
+      "sha256": "9570915c76c7e6a23a981d57b4fbf567ad35389f361f20d415c644727bdd7748",
+      "local_imports": [
+        "work_in_progress.OriginalSchurDensitySufficiency"
+      ],
+      "external_imports": [
+        "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalPolylogExecutor",
+      "path": "support/work_in_progress/OriginalPolylogExecutor.lean",
+      "source_path": "formalization/work_in_progress/OriginalPolylogExecutor.lean",
+      "sha256": "8e1d93b5c90731971a04fab151b93a5c244d92ac122991b152bd25c479e7dddd",
+      "local_imports": [
+        "work_in_progress.OriginalMonotoneDensity",
+        "work_in_progress.OriginalPolylogDensity"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionFrameAlphabet",
+      "path": "support/work_in_progress/OriginalProjectionFrameAlphabet.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionFrameAlphabet.lean",
+      "sha256": "c3f14d7d2d79434a894916f81ee00b636aa6c7faf5afe1527aac7c40b3db7f64",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeFrameDictionary"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeDirections",
+      "path": "support/work_in_progress/OriginalProjectionNativeDirections.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeDirections.lean",
+      "sha256": "71f3b839f58a53787d4a86788d0b75f0d579e190c68f2ee4de073e054546a842",
+      "local_imports": [
+        "work_in_progress.OriginalCheckedNativeDirection"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeFrameDictionary",
+      "path": "support/work_in_progress/OriginalProjectionNativeFrameDictionary.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeFrameDictionary.lean",
+      "sha256": "6bf9696aa565bbbd974e7699eff8f8edd69fecb16e48545b7ea0c61a63754855",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeDirections",
+        "work_in_progress.OriginalProjectionNativeGenerators"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeGenerators",
+      "path": "support/work_in_progress/OriginalProjectionNativeGenerators.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeGenerators.lean",
+      "sha256": "a07395c193aaac84d3aa59b17c570cc18b8bb0d970da82e4bf96945f2744d448",
+      "local_imports": [
+        "work_in_progress.OriginalNativeGeneratorRealization",
+        "work_in_progress.OriginalProjectionNativeRowCertificate"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeOutputIdentity",
+      "path": "support/work_in_progress/OriginalProjectionNativeOutputIdentity.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeOutputIdentity.lean",
+      "sha256": "e94ed440e43020510180668d7bd9a8064d4630b0830a0e894d013c5abdd1a48e",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeGenerators",
+        "work_in_progress.OriginalProjectionNativeRowChecks",
+        "work_in_progress.OriginalSparseNativeProgram"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeRowCertificate",
+      "path": "support/work_in_progress/OriginalProjectionNativeRowCertificate.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeRowCertificate.lean",
+      "sha256": "4406afc28809d9a9335e76be8a16bd93d307d881b52f22237b3db03bf6db7241",
+      "local_imports": [
+        "work_in_progress.OriginalSparseNativeRows"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeRowChecks",
+      "path": "support/work_in_progress/OriginalProjectionNativeRowChecks.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeRowChecks.lean",
+      "sha256": "17adbde0dc580425f104f48550d9fab17ddef37ac7dae90bdb77350161072d72",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeRowCertificate"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeTapeAllNodes",
+      "path": "support/work_in_progress/OriginalProjectionNativeTapeAllNodes.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeTapeAllNodes.lean",
+      "sha256": "a8255e362a40ce8b124b75194508800e1ce308b5b7bf33c5db259fcad5f10642",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeTapeMetadata"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeTapeCensus",
+      "path": "support/work_in_progress/OriginalProjectionNativeTapeCensus.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeTapeCensus.lean",
+      "sha256": "00f5da3b0780800df0d6d492420e9b90007c9eb3299f8bd097dcadc285820d48",
+      "local_imports": [
+        "work_in_progress.OriginalCallbackGreenPotential",
+        "work_in_progress.OriginalProjectionNativeTapeCorrectness"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeTapeCorrectness",
+      "path": "support/work_in_progress/OriginalProjectionNativeTapeCorrectness.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeTapeCorrectness.lean",
+      "sha256": "0ddff3b9e72a80eaae143a62a4e92ad89885c8f5cec49032637d06d367aedb4b",
+      "local_imports": [
+        "work_in_progress.OriginalNativeSparseExecutionBridge",
+        "work_in_progress.OriginalProjectionNativeOutputIdentity",
+        "work_in_progress.OriginalProjectionNativeTapeAllNodes",
+        "work_in_progress.OriginalProjectionNativeTapeImplementation"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeTapeImplementation",
+      "path": "support/work_in_progress/OriginalProjectionNativeTapeImplementation.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeTapeImplementation.lean",
+      "sha256": "a5d497b274b1de3c37185dea34f1ad781412227c220f4b1d924aa3014604a4c5",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeTapeMetadata"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalProjectionNativeTapeMetadata",
+      "path": "support/work_in_progress/OriginalProjectionNativeTapeMetadata.lean",
+      "source_path": "formalization/work_in_progress/OriginalProjectionNativeTapeMetadata.lean",
+      "sha256": "c8c46ddd2fe3b7e5e786dc15481944a009c943aef32a95f0bdf863726f83edec",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionFrameAlphabet",
+        "work_in_progress.OriginalProjectionNativeRowCertificate",
+        "work_in_progress.OriginalSparsePointGather"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalQuadraticAdapterWords",
+      "path": "support/work_in_progress/OriginalQuadraticAdapterWords.lean",
+      "source_path": "formalization/work_in_progress/OriginalQuadraticAdapterWords.lean",
+      "sha256": "a229aa2f96d1199ca6b5b23d22fb58b69ef0742e5855047c171a1843df8633b2",
+      "local_imports": [
+        "work_in_progress.OriginalContextualChirpWords",
+        "work_in_progress.OriginalPhysicalQuarterPhaseRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalQuadraticCharacterCertificates",
+      "path": "support/work_in_progress/OriginalQuadraticCharacterCertificates.lean",
+      "source_path": "formalization/work_in_progress/OriginalQuadraticCharacterCertificates.lean",
+      "sha256": "3150fea01cd55de90bb546a8e158b087fbd8239f52f779fd4b59f10fc035c8a5",
+      "local_imports": [
+        "work_in_progress.OriginalAffineFourierConjugacy"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalSchurDensitySufficiency",
+      "path": "support/work_in_progress/OriginalSchurDensitySufficiency.lean",
+      "source_path": "formalization/work_in_progress/OriginalSchurDensitySufficiency.lean",
+      "sha256": "cf142336027e2ab34283110c71bfc56e473f3fdfe4d47f2f98be1ba173bb0e3c",
+      "local_imports": [
+        "work_in_progress.OriginalAllLengthSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalScratchGroupedBodyRAM",
+      "path": "support/work_in_progress/OriginalScratchGroupedBodyRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalScratchGroupedBodyRAM.lean",
+      "sha256": "4ba1f80e3782d1ead220a2c69428a4fac76378ddca1e9de0f3d0eca0ea9db8e7",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedBodyInstantiationRAM",
+        "work_in_progress.OriginalNativeBankDAG"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalScratchGroupedInstantiationRAM",
+      "path": "support/work_in_progress/OriginalScratchGroupedInstantiationRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalScratchGroupedInstantiationRAM.lean",
+      "sha256": "00469555640b96d9d085faac7f6fe54a1d0cf912326a766c66bcd3e90490f3fc",
+      "local_imports": [
+        "work_in_progress.OriginalProjectionNativeTapeCensus",
+        "work_in_progress.OriginalScratchGroupedPhysicalRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalScratchGroupedPhysicalRAM",
+      "path": "support/work_in_progress/OriginalScratchGroupedPhysicalRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalScratchGroupedPhysicalRAM.lean",
+      "sha256": "002697ca692a631cc9ced4743ac682aa4e937507de1be2b7aa96eba221a000bc",
+      "local_imports": [
+        "work_in_progress.OriginalScratchGroupedBodyRAM"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalSectorSubstitution",
+      "path": "support/work_in_progress/OriginalSectorSubstitution.lean",
+      "source_path": "formalization/work_in_progress/OriginalSectorSubstitution.lean",
+      "sha256": "fc15c902fa4839ccb996c3c546ac3d9c7019ae7199907d67f7e35d2925eae56d",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalSharedBlockCompletion",
+      "path": "support/work_in_progress/OriginalSharedBlockCompletion.lean",
+      "source_path": "formalization/work_in_progress/OriginalSharedBlockCompletion.lean",
+      "sha256": "3830ab9738d54e2ca44067db2de0755dc12be7467f873976dc703d2a7a86f7d2",
+      "local_imports": [
+        "work_in_progress.OriginalPolylogExecutor",
+        "work_in_progress.OriginalScratchGroupedInstantiationRAM",
+        "work_in_progress.OriginalStrictSquareRootMargin"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalSparseNativeProgram",
+      "path": "support/work_in_progress/OriginalSparseNativeProgram.lean",
+      "source_path": "formalization/work_in_progress/OriginalSparseNativeProgram.lean",
+      "sha256": "948bb2027a0dfb6de779c8fa671321fccba5f314484a8429216e0c7e171b1f61",
+      "local_imports": [
+        "work_in_progress.OriginalSparseNativeRows"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalSparseNativeRows",
+      "path": "support/work_in_progress/OriginalSparseNativeRows.lean",
+      "source_path": "formalization/work_in_progress/OriginalSparseNativeRows.lean",
+      "sha256": "9639ea27a01017bb67e001ad95c5d63d0b70964e632b46518ac068259ae4e7e0",
+      "local_imports": [
+        "work_in_progress.OriginalNativeGeneratorSymbols"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalSparsePointGather",
+      "path": "support/work_in_progress/OriginalSparsePointGather.lean",
+      "source_path": "formalization/work_in_progress/OriginalSparsePointGather.lean",
+      "sha256": "a86b7bfdf510ef400bad09c64a4b30429f05058728e7ea6ce95a1f2992254ddf",
+      "local_imports": [
+        "work_in_progress.OriginalNativeBankDAG"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalStandardTensorExecutor",
+      "path": "support/work_in_progress/OriginalStandardTensorExecutor.lean",
+      "source_path": "formalization/work_in_progress/OriginalStandardTensorExecutor.lean",
+      "sha256": "e25179783cb06a67f356daa00d8ffd1def8ae120255f508301dfb80b10d000b4",
+      "local_imports": [
+        "work_in_progress.OriginalCompilerRootBridge",
+        "work_in_progress.OriginalSectorSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalStrictSquareRootMargin",
+      "path": "support/work_in_progress/OriginalStrictSquareRootMargin.lean",
+      "source_path": "formalization/work_in_progress/OriginalStrictSquareRootMargin.lean",
+      "sha256": "38972fe4f731ec73445b33818ba53e09dc9d04a649ea2e7ac0f4dbce076bd073",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedAllowanceBound",
+        "work_in_progress.OriginalPolylogDensity"
+      ],
+      "external_imports": [
+        "Mathlib.Analysis.SpecialFunctions.Pow.Continuity"
+      ]
+    },
+    {
+      "module": "work_in_progress.OriginalSynchronizedSubstitution",
+      "path": "support/work_in_progress/OriginalSynchronizedSubstitution.lean",
+      "source_path": "formalization/work_in_progress/OriginalSynchronizedSubstitution.lean",
+      "sha256": "b28086c7b35c114e2438785383fdbf9485aa25e5d5b33e1c7009d3172606a141",
+      "local_imports": [
+        "work_in_progress.OriginalSectorSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalTranslatedBankPolynomialRAM",
+      "path": "support/work_in_progress/OriginalTranslatedBankPolynomialRAM.lean",
+      "source_path": "formalization/work_in_progress/OriginalTranslatedBankPolynomialRAM.lean",
+      "sha256": "019f9779ae2d2573e4b1812bdf3e06384327981f16387359a6388e127af43125",
+      "local_imports": [
+        "work_in_progress.OriginalContextualBankElimination"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "work_in_progress.OriginalWorkingSubstitution",
+      "path": "support/work_in_progress/OriginalWorkingSubstitution.lean",
+      "source_path": "formalization/work_in_progress/OriginalWorkingSubstitution.lean",
+      "sha256": "88ce814b1521726c545cb403197c21f595788aac1970032dd57ce542ac08afdb",
+      "local_imports": [
+        "work_in_progress.OriginalCompilerRootReader",
+        "work_in_progress.OriginalSynchronizedSubstitution"
+      ],
+      "external_imports": []
+    }
+  ],
+  "copied_provenance_files": [
+    {
+      "path": "provenance/upstream_source_manifest.json",
+      "source_path": "references/openai_uniform_fourier/source_manifest.json",
+      "sha256": "aa3516e3f897119dcfd8be5f9e6175acd3828cb8885336ee9228fddcc00ee2f7"
+    },
+    {
+      "path": "provenance/upstream_compatibility_manifest.json",
+      "source_path": "references/openai_uniform_fourier/compatibility_manifest.json",
+      "sha256": "30377554b2ad3c401bfa01ba20f98c7c8b2ffbc159b509bd318a1a70cb5dd7af"
+    },
+    {
+      "path": "provenance/upstream_bundle_recipe.py",
+      "source_path": "references/openai_uniform_fourier/build_bundle.py",
+      "sha256": "5f0809a9083e80df93a056ab78ff12817ee86a34af81dd73cc9e0969309c19d5"
+    },
+    {
+      "path": "provenance/PrimeCountingCompatibility.lean",
+      "source_path": "formalization/vendor/PrimeCountingCompatibility.lean",
+      "sha256": "cfc62a559e4a8d6ed117014b2db44b15dacb26e93bfd3d37c41c3740026c3fc2"
+    },
+    {
+      "path": "provenance/modern_chebyshev_commit.json",
+      "source_path": "references/openai_uniform_fourier/modern_chebyshev_commit.json",
+      "sha256": "81dc490c33c892d29d42c30f1cd95f1e277550174ebe99f34c987d06b30974db"
+    }
+  ],
+  "authored_modules": [
+    {
+      "module": "FourierTensor",
+      "path": "FourierTensor.lean",
+      "sha256": "0caed979fcbde79c567614a9168ec70ee8d90670c5d858eda1a468174d4b10c3",
+      "local_imports": [
+        "FourierSchur.Executor",
+        "FourierTensor.AllLengthDFT"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.AllLengthDFT",
+      "path": "FourierTensor/AllLengthDFT.lean",
+      "sha256": "59417a40446d42b5d7b9bc57e1e177e57f392aa7f8184ab3969b34d8da93d9d3",
+      "local_imports": [
+        "FourierTensor.DFT.Program",
+        "FourierTensor.DFT.ExactWork",
+        "FourierTensor.DFT.Asymptotics"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.CachedExecutor",
+      "path": "FourierTensor/CachedExecutor.lean",
+      "sha256": "6799bd2d85b13eec983fbccc1b85f87bc01890138890e9b053b0c40b6ca85eb2",
+      "local_imports": [
+        "FourierTensor.Tensor.CenterCache.Word",
+        "FourierTensor.Tensor.CenterCache.Assembly",
+        "FourierTensor.Tensor.CenterCache.Charge",
+        "FourierTensor.Tensor.Workspace",
+        "FourierTensor.Tensor.ExponentComparison"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Check",
+      "path": "FourierTensor/Check.lean",
+      "sha256": "1cc55eebcc292fd235207ea091e067ab49827d60487893bba961a8c7b61493c7",
+      "local_imports": [
+        "FourierTensor",
+        "work_in_progress.BoundedKernelAxiomAudit"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.DFT.Asymptotics",
+      "path": "FourierTensor/DFT/Asymptotics.lean",
+      "sha256": "73550ac9cd531628415dcdbd6334e1162bca7323460d89b0dffe089617bdbb3c",
+      "local_imports": [
+        "FourierTensor.Tensor.Workspace",
+        "FourierTensor.DFT.LengthSelection",
+        "work_in_progress.OriginalAllLengthSubstitution"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.DFT.ExactWork",
+      "path": "FourierTensor/DFT/ExactWork.lean",
+      "sha256": "5085a7fa3079c133a1e6738458592b191c9badfbd3f416ed58b822f8a1aac950",
+      "local_imports": [
+        "FourierTensor.DFT.Program"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.DFT.LengthSelection",
+      "path": "FourierTensor/DFT/LengthSelection.lean",
+      "sha256": "4180eb761d0f0e2d580f166730394750124ba6d23458e57ae588aba7a550bae9",
+      "local_imports": [
+        "vendor.OpenAIUniformFourierBundle"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.DFT.Program",
+      "path": "FourierTensor/DFT/Program.lean",
+      "sha256": "e3350c7ec3f00f9e58f47c1121bc0627a7b4a8e5c7e059ab73477512405c09b0",
+      "local_imports": [
+        "FourierTensor.CachedExecutor",
+        "work_in_progress.OriginalSharedBlockCompletion"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.CenterCache",
+      "path": "FourierTensor/Tensor/CenterCache.lean",
+      "sha256": "85dc3a681d8677e58626a38fea842516e74ca60bba77eeb03fa3641d947b2e3a",
+      "local_imports": [
+        "work_in_progress.OriginalNativeCenterSharing"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.CenterCache.Assembly",
+      "path": "FourierTensor/Tensor/CenterCache/Assembly.lean",
+      "sha256": "bcc6611aa09c9dcc73d3ba0565d41f70ab492459d2bed7a09f645db153f5dadd",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedCensusBridge",
+        "work_in_progress.OriginalNativeCenterSharing"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.CenterCache.Census",
+      "path": "FourierTensor/Tensor/CenterCache/Census.lean",
+      "sha256": "e9d4c9695e0b54840bfad6a8ac2f13b16baa74a09fc7dbc374403c250481faee",
+      "local_imports": [
+        "FourierTensor.Tensor.CenterCache.Rate",
+        "work_in_progress.OriginalGroupedCensusBridge"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.CenterCache.Charge",
+      "path": "FourierTensor/Tensor/CenterCache/Charge.lean",
+      "sha256": "4b28c4685de6e254441485963a7534901e4d79a6c6e258a831e5ab726b05a2c0",
+      "local_imports": [
+        "FourierTensor.Tensor.CenterCache.Census"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.CenterCache.Rate",
+      "path": "FourierTensor/Tensor/CenterCache/Rate.lean",
+      "sha256": "9a6b54c4e0c2c308b6b3af9687cd877b2c06bc2094b3cd3ffe1adf49c8f49134",
+      "local_imports": [
+        "work_in_progress.OriginalGroupedResidualCertificate",
+        "work_in_progress.OriginalGroupedAllowanceBound"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.CenterCache.Word",
+      "path": "FourierTensor/Tensor/CenterCache/Word.lean",
+      "sha256": "05b8ccd7db1f806adc1902caf3739924ec54a84fa0774a1e799256bb3c13fd55",
+      "local_imports": [
+        "FourierTensor.Tensor.CenterCache",
+        "FourierTensor.Tensor.CenterCache.Census"
+      ],
+      "external_imports": []
+    },
+    {
+      "module": "FourierTensor.Tensor.ExponentComparison",
+      "path": "FourierTensor/Tensor/ExponentComparison.lean",
+      "sha256": "3b513316b544684b3a49d64879c6b605a046d7dcf6d64d29e6b1ac6e6f9d543d",
+      "local_imports": [
+        "FourierTensor.Tensor.CenterCache.Rate"
+      ],
+      "external_imports": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Deriv"
+      ]
+    },
+    {
+      "module": "FourierTensor.Tensor.Workspace",
+      "path": "FourierTensor/Tensor/Workspace.lean",
+      "sha256": "9d088f5c8d992eccdd3f79aae6c189c614e1d439422394f90e0f492b1bf2c261",
+      "local_imports": [
+        "FourierTensor.Tensor.CenterCache.Rate",
+        "work_in_progress.OriginalScratchGroupedInstantiationRAM",
+        "work_in_progress.OriginalGroupedNativeProfile",
+        "work_in_progress.OriginalCertifiedTensorBackend"
+      ],
+      "external_imports": []
+    }
+  ],
+  "prior_executor_module": "FourierSchur.Executor",
+  "prior_executor_closure_count": 103
+}

@@ -1,0 +1,253 @@
+{
+  "date": "2026-11-19",
+  "lean_toolchain": "leanprover/lean4:v4.29.1",
+  "lean_version": "Lean 4.29.1; commit f72c35b3f637c8c6571d353742168ab66cc22c00; x86_64-w64-windows-gnu",
+  "mathlib_revision": "5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+  "local_module_count": 120,
+  "headline_declaration": "FourierTensor.AllLengthDFT.guarantee",
+  "exponent": "1 - 3 / 100000000",
+  "exponent_comparison": {
+    "baseline": "OAI.PowerSaving.theta = log_1000000(1000000 - 6871402692000000 / 2^71)",
+    "saving_ratio": "(1 - FourierTensor.CachedExecutor.exponent) / (1 - OAI.PowerSaving.theta)",
+    "strict_lower_bound": "142420.49",
+    "strict_upper_bound": "142420.50",
+    "declaration": "FourierTensor.AllLengthDFT.published_exponent_saving",
+    "primary_source": "https://github.com/openai/math/blob/main/preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/build/sections/introduction.tex",
+    "upstream_lean_benchmark": "OAI.PowerSaving.alpha = 1 - 2/10^11",
+    "upstream_lean_saving_ratio": "1500",
+    "upstream_lean_declaration": "FourierTensor.AllLengthDFT.upstream_lean_exponent_saving"
+  },
+  "source_validation": {
+    "commands": [
+      "python tools/check_sources.py",
+      "python tools/check_sources.py --compare-source ORIGINAL_FORMALIZATION"
+    ],
+    "result": "passed",
+    "headline_executor_closure_modules": 114,
+    "earlier_executor_closure_modules": 103,
+    "authored_modules": 16,
+    "copied_modules": 104,
+    "copied_provenance_files": 5,
+    "source_manifest_sha256": "04f409001315f9b5d66cb0064e07e6de41b26570a93955866b4cc0910d8ad935"
+  },
+  "lake_validation": {
+    "command": "lake --packages=TEMP_LOCAL_PACKAGE_OVERRIDES script run checkTargets",
+    "result": "passed",
+    "module_targets": 120,
+    "dependency_check": "All nine prepared dependency source HEADs matched the pinned package manifest revisions.",
+    "temporary_override_scope": "The target resolver used a temporary copy of the project source and path overrides to the same nine pinned packages."
+  },
+  "proof_compilation": {
+    "result": "passed",
+    "scope": "Five all-length proof modules and both package entry points compiled from the delivered source against verified prepared tensor, local compiler, and mathlib objects on the pinned toolchain.",
+    "kernel_audit_command": "lean --threads 1 --tstack 32768 -o TEMP_COMPILED/FourierTensor/Check.olean FourierTensor/Check.lean",
+    "axiom_traversals": {
+      "FourierTensor.CachedExecutor.guarantee": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 31677,
+        "cutpoints": []
+      },
+      "FourierTensor.CachedExecutor.saving_ratio": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 26777,
+        "cutpoints": []
+      },
+      "FourierTensor.AllLengthDFT.guarantee": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 35699,
+        "cutpoints": []
+      },
+      "FourierTensor.AllLengthDFT.running_time": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 35479,
+        "cutpoints": []
+      },
+      "FourierTensor.AllLengthDFT.count_from_length": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 35479,
+        "cutpoints": []
+      },
+      "FourierTensor.AllLengthDFT.below_published_bound": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 35683,
+        "cutpoints": []
+      }
+    },
+    "source_sha256": {
+      "FourierTensor.lean": "74edf4d3729be1862218b520905f5110e5d23f37518d377911f183bea8212542",
+      "FourierTensor/AllLengthAsymptotics.lean": "7df7b8cad6bce1cad9fbb671d25f0de328e6ef560af89f8dff4969542f274f3d",
+      "FourierTensor/AllLengthDFT.lean": "bb80bfeb2dff367a7940a472af4d2c711cd9aa8e41d642d1633e73d5abd6a139",
+      "FourierTensor/AllLengthExactWork.lean": "02a22146b63d7a04a2e519f98983e196f80b7d05a50f653d46cf8d96a14bd719",
+      "FourierTensor/AllLengthProgram.lean": "e3350c7ec3f00f9e58f47c1121bc0627a7b4a8e5c7e059ab73477512405c09b0",
+      "FourierTensor/CachedExecutor.lean": "8f6f9cbdd1125c95bd09711c8346ba585e6979a32b46b68de1a21feb6d9f4053",
+      "FourierTensor/CenterCache.lean": "85dc3a681d8677e58626a38fea842516e74ca60bba77eeb03fa3641d947b2e3a",
+      "FourierTensor/CenterCacheAssembly.lean": "bcc6611aa09c9dcc73d3ba0565d41f70ab492459d2bed7a09f645db153f5dadd",
+      "FourierTensor/CenterCacheCensus.lean": "53c3fe316c03694e1b69b785941d19c24404310300f194c8c726a02de59a10a0",
+      "FourierTensor/CenterCacheCharge.lean": "f9f6bbf8d200d30b8c482587b161ce185883e1ce54dfcd384b114a6b29daf6cf",
+      "FourierTensor/CenterCacheRate.lean": "9a6b54c4e0c2c308b6b3af9687cd877b2c06bc2094b3cd3ffe1adf49c8f49134",
+      "FourierTensor/CenterCacheWord.lean": "84f8481c84328b33749455594ea7bda968eeb3ec3bd3728a390097183d899048",
+      "FourierTensor/Check.lean": "1cc55eebcc292fd235207ea091e067ab49827d60487893bba961a8c7b61493c7",
+      "FourierTensor/ExponentComparison.lean": "bbfd63f85226a941f2f56fd02c2fbb2764fe95635f1b993b3dd1ca50d54ea23b",
+      "FourierTensor/LengthSelectionBound.lean": "4180eb761d0f0e2d580f166730394750124ba6d23458e57ae588aba7a550bae9",
+      "FourierTensor/WorkspaceExecutor.lean": "f7af6de3d70a1e243a0892bd746ad5f46b213aa63b8d951fe2d5b20eee41f00f"
+    },
+    "additional_callback_audits": {
+      "FourierTensor.CachedExecutor.local_physical_rank32": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 20450,
+        "cutpoints": []
+      },
+      "FourierTensor.CachedExecutor.global_rank32": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 20670,
+        "cutpoints": []
+      },
+      "FourierTensor.CachedExecutor.charged_allowance": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 20675,
+        "cutpoints": []
+      }
+    },
+    "independent_source_rebuild": {
+      "result": "passed",
+      "rebuilt_modules": [
+        "FourierTensor",
+        "FourierTensor.AllLengthAsymptotics",
+        "FourierTensor.AllLengthDFT",
+        "FourierTensor.AllLengthExactWork",
+        "FourierTensor.AllLengthProgram",
+        "FourierTensor.Check",
+        "FourierTensor.LengthSelectionBound"
+      ],
+      "scope": "An independent output tree began with the nine tensor proof objects from the earlier independent source build. The five new all-length proof modules, public import, and checker compiled afresh against those objects and pinned local and external dependencies.",
+      "audits": "All six uncut public dependency traversals returned identical declaration counts and axiom lists on both builds."
+    },
+    "additional_all_length_analytic_audits": {
+      "FourierTensor.AllLengthAsymptotics.wind_bigO": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 28229,
+        "cutpoints": []
+      },
+      "FourierTensor.AllLengthAsymptotics.uniformize": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 16637,
+        "cutpoints": []
+      },
+      "FourierTensor.AllLengthAsymptotics.rate_little_paper": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 27075,
+        "cutpoints": []
+      }
+    },
+    "prior_tensor_source_rebuild": {
+      "result": "passed",
+      "module_count": 11,
+      "scope": "All eleven authored modules, including the public import and checker, compiled from the delivered Lean source into a second, initially empty package output tree against the pinned dependency objects.",
+      "assembly_memory": "CenterCacheAssembly compiled without an explicit process memory cap; an earlier attempt with a 5120 MB cap did not complete.",
+      "audits": "The rebuilt public checker independently reported the same axioms and declaration counts for the native guarantee and saving ratio."
+    }
+  },
+  "earlier_executor": {
+    "declaration": "FourierSchur.Executor.guarantee",
+    "exponent": "1 - 1 / 100000000",
+    "focused_audits": [
+      {
+        "declaration": "FourierSchur.Executor.guarantee",
+        "residual_axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 16363,
+        "cutpoints": [
+          "FourierSchur.OriginalCertifiedTensorBackend.rawCertified_of_complete",
+          "FourierSchur.OriginalGroupedCensusExecutor.complete_executor"
+        ]
+      },
+      {
+        "declaration": "FourierSchur.Executor.complete_executor",
+        "residual_axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "visited_declarations": 17255,
+        "cutpoints": [
+          "FourierSchur.OriginalCertifiedTensorBackend.rawCertified_of_complete",
+          "FourierSchur.OriginalGroupedCensusExecutor.complete_executor",
+          "FourierSchur.OriginalCertifiedTensorBackend.RawCertifiedFor.complete"
+        ]
+      }
+    ]
+  },
+  "full_cold_build": {
+    "performed": false,
+    "command": "lake exe cache get && lake build"
+  },
+  "publication": {
+    "remote_configured": false,
+    "commit_created": false
+  },
+  "work_contract": {
+    "transform": "positive-sign, unnormalized DFT, every positive integer N and every complex input of length N",
+    "charge": "work(order, N) + 1 + work(solve, (N, root(receipt N), x))",
+    "exact_time": "Exact equality to the charge on any input of length N, to the zero-input charge, and to an integer-only, scalar-erased evaluation of the programs.",
+    "declarations": [
+      "FourierTensor.AllLengthDFT.running_time",
+      "FourierTensor.AllLengthDFT.count_from_length",
+      "FourierTensor.AllLengthDFT.time_le_allowance"
+    ],
+    "root_order": "receipt(N), strictly less than 8*N^3",
+    "pointwise": "For N > 0, T(N) <= C*N*max(1,log N)^beta*max(1,log(log N))^(2-beta) for a fixed C > 0.",
+    "asymptotic": "O(N*(log N)^beta*(log(log N))^(2-beta)), beta = 1 - 3/100000000",
+    "published_comparison": "FourierTensor.AllLengthDFT.below_published_bound: exactTime =o paperTime"
+  }
+}

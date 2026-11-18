@@ -1,0 +1,14 @@
+FourierTensor includes source derived from the OpenAI math repository.
+
+Upstream repository: https://github.com/openai/math
+Pinned source revision: fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+Upstream license: Apache License, Version 2.0 (see LICENSE).
+
+The vendored OpenAIUniformFourierBundle preserves the upstream definitions and
+proofs with local Lean/mathlib compatibility edits. The source module hashes,
+generation recipe, compatibility edits and generated bundle hash are recorded
+under provenance/.
+
+The prime-counting compatibility argument adapts Apache-2.0 mathlib work by
+Bolton Bailey, Ralf Stephan, Alastair Irving, Terry Tao, and Ruben Van de Velde.
+Its source revision and attribution remain in the copied compatibility proof.
