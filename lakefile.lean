@@ -16,6 +16,8 @@ lean_lib FourierTensorSupport where
 @[default_target]
 lean_lib FourierTensor where
   globs := #[`FourierTensor, `FourierTensor.+]
+  -- The center-cache assembly proof needs a larger worker stack.
+  moreLeanArgs := #["--tstack", "32768"]
 
 /-- Check module ownership and source availability without compiling proofs. -/
 script checkTargets do
